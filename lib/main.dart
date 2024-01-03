@@ -8,10 +8,10 @@ void main() {
         backgroundColor: Colors.blueAccent,
         appBar: AppBar(
           centerTitle: true,
-          title: Text('Dicee'),
+          title: const Text('Dice'),
           backgroundColor: Colors.blue,
         ),
-        body: DicePage(),
+        body: const DicePage(),
       ),
     ),
   );
@@ -28,14 +28,12 @@ class _DicePageState extends State<DicePage> {
   var leftDiceNumber = 1; // Initialize it as 5 initially we can intialized with any number
   var rightDiceNumber = 1;
 
-  void ChangeDice() {
-    setState(() {
+  void ChangeDice() => setState(() {
       leftDiceNumber = Random().nextInt(6) +
           1; //generate the random number from 0-max,excluding max so we need to add 1 if we want number from 0-6.
       rightDiceNumber = Random().nextInt(6) + 1;
       // print('DiceNumber = $leftDiceNumber');
     });
-  }
 
   @override
   Widget build(BuildContext context) {
